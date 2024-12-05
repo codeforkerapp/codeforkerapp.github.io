@@ -19,7 +19,7 @@ Welcome to **CodeForkerApp**, an open-source platform dedicated to building web 
 
 ## 📊 Analytics
 
-![Visitors](https://visitor-badge.glitch.me/badge?page_id=codeforkerapp.codeforkerapp)
+![Visitors](https://github-readme-stats.vercel.app/api?username=codeforkerapp&show_icons=true&theme=dark)
 
 Track the number of visitors to our GitHub Pages site and see how popular the tools are!
 
