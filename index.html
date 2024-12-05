@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>CodeForker App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="light">
+  <header class="header" data-theme="light">
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <p2>CodeForker</p2>
+    <!-- Tambahkan input pencarian untuk setiap tab -->
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Cari..." oninput="searchContent()">
+    </div>
+    </div>
+  </header>
+  <div id="slideMenu" data-theme="light">
+    <img src="img/logo.png" alt="Logo Aplikasi" class="menu-logo">
+    <hr class="menu-divider"> <!-- Garis pembatas setelah logo -->
+    <a href="#"><i class="fas fa-home"></i> Beranda</a>
+    <hr class="menu-divider"> <!-- Garis pembatas antar menu -->
+    <a href="settings.html"><i class="fas fa-gear"></i> Pengaturan</a>
+    <hr class="menu-divider"> <!-- Garis pembatas antar menu -->
+    <a href="#"><i class="fas fa-crown"></i> Premium</a>
+    <hr class="menu-divider"> <!-- Garis pembatas antar menu -->
+    <a href="about.html"><i class="fas fa-circle-info"></i> Tentang Kami</a>
+    <hr class="menu-divider">
+  </div>
+
+  <!-- Tab Tools -->
+    <div id="tools" class="tab-content active" data-theme="light">
+        <div class="tools-buttons">
+            <button class="tool-button" data-theme="light" data-search-tags="compiler online" onclick="window.open('http://codeforker.42web.io/tools/adminfinder.html?i=1', '_blank')">
+                <i class="fas fa-code"></i> Admin Finder
+            </button>
+            <button class="tool-button" data-theme="light" data-search-tags="converter unit" onclick="window.open('https://codeforker.com/converter', '_blank')">
+                <i class="fas fa-exchange-alt"></i> Konverter Unit
+            </button>
+            <button class="tool-button" data-theme="light" data-search-tags="regex tester" onclick="window.open('https://codeforker.com/regex', '_blank')">
+                <i class="fas fa-search"></i> Regex Tester
+            </button>
+            <button class="tool-button" data-theme="light" data-search-tags="json formatter" onclick="window.open('https://codeforker.com/json', '_blank')">
+                <i class="fas fa-puzzle-piece"></i> JSON Formatter
+            </button>
+        </div>
+    </div>
+
+    <!-- Tab Blog -->
+    <div id="blog" class="tab-content" data-theme="light">
+    <div class="card" data-theme="light" data-search-tags="network security nmap">
+    <img src="img/nmap.png" alt="Thumbnail Nmap">
+    <h4 class="blog-title">
+        <a href="nmap.html" class="blog-link">Nmap</a>
+    </h4>
+    <p>Alat untuk network discovery dan security auditing.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="penetration testing metasploit">
+    <img src="img/metasploit.png" alt="Thumbnail Metasploit">
+    <h4 class="blog-title">
+        <a href="metasploit.html" class="blog-link">Metasploit</a>
+    </h4>
+    <p>Platform eksploitasi yang sangat kuat untuk pengujian penetrasi.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="password cracking hydra">
+    <img src="img/hydra.png" alt="Thumbnail Hydra">
+    <h4 class="blog-title">
+        <a href="hydra.html" class="blog-link">Hydra</a>
+    </h4>
+    <p>Password cracker yang mendukung berbagai protokol.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="sql injection sqlmap">
+    <img src="img/sqlmap.png" alt="Thumbnail SQLmap">
+    <h4 class="blog-title">
+        <a href="sqlmap.html" class="blog-link">SQLmap</a>
+    </h4>
+    <p>Alat otomatisasi deteksi dan eksploitasi SQL Injection.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="web scanner nikto">
+    <img src="img/nikto.png" alt="Thumbnail Nikto">
+    <h4 class="blog-title">
+        <a href="nikto.html" class="blog-link">Nikto</a>
+    </h4>
+    <p>Web server scanner yang mendeteksi kelemahan keamanan.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="file download wget">
+    <img src="img/wget.png" alt="Thumbnail Wget">
+    <h4 class="blog-title">
+        <a href="wget.html" class="blog-link">Wget</a>
+    </h4>
+    <p>Alat pengunduhan berkas dari jaringan.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="network utility netcat">
+    <img src="img/netcat.png" alt="Thumbnail Netcat">
+    <h4 class="blog-title">
+        <a href="netcat.html" class="blog-link">Netcat</a>
+    </h4>
+    <p>Utility jaringan yang serbaguna.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="password cracking john the ripper">
+    <img src="img/johntheripper.png" alt="Thumbnail John the Ripper">
+    <h4 class="blog-title">
+        <a href="john-the-ripper.html" class="blog-link">John the Ripper</a>
+    </h4>
+    <p>Alat untuk cracking password.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="password recovery hashcat">
+    <img src="img/hashcat.png" alt="Thumbnail Hashcat">
+    <h4 class="blog-title">
+        <a href="hashcat.html" class="blog-link">Hashcat</a>
+    </h4>
+    <p>Advanced password recovery tool.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="wifi security aircrack-ng">
+    <img src="img/aircrack-ng.png" alt="Thumbnail Aircrack-ng">
+    <h4 class="blog-title">
+        <a href="aircrack-ng.html" class="blog-link">Aircrack-ng</a>
+    </h4>
+    <p>Tools untuk audit keamanan jaringan WiFi.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="directory brute force dirb">
+    <img src="img/dirb.png" alt="Thumbnail Dirb">
+    <h4 class="blog-title">
+        <a href="dirb.html" class="blog-link">Dirb</a>
+    </h4>
+    <p>Alat untuk brute force direktori pada web server.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="directory brute force dirbuster">
+    <img src="img/dirbuster.png" alt="Thumbnail Dirbuster">
+    <h4 class="blog-title">
+        <a href="dirbuster.html" class="blog-link">Dirbuster</a>
+    </h4>
+    <p>Brute force direktori web menggunakan wordlist.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="wordpress security wpscan">
+    <img src="img/wpscan.png" alt="Thumbnail WPScan">
+    <h4 class="blog-title">
+        <a href="wpscan.html" class="blog-link">WPScan</a>
+    </h4>
+    <p>Alat untuk scanning keamanan situs WordPress.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="social engineering toolkit">
+    <img src="img/set.png" alt="Thumbnail Social Engineer Toolkit (SET)">
+    <h4 class="blog-title">
+        <a href="set.html" class="blog-link">Social Engineer Toolkit (SET)</a>
+    </h4>
+    <p>Toolkit untuk social engineering.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="dos attack slowloris">
+    <img src="img/slowloris.png" alt="Thumbnail Slowloris">
+    <h4 class="blog-title">
+        <a href="slowloris.html" class="blog-link">Slowloris</a>
+    </h4>
+    <p>Alat DoS untuk menyerang server web.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="termux package manager tool-x">
+    <img src="img/tool-x.png" alt="Thumbnail Tool-X">
+    <h4 class="blog-title">
+        <a href="tool-x.html" class="blog-link">Tool-X</a>
+    </h4>
+    <p>Pengelola paket untuk Termux, memudahkan instalasi tools.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="termux api">
+    <img src="img/termux-api.png" alt="Thumbnail Termux-API">
+    <h4 class="blog-title">
+        <a href="termux-api.html" class="blog-link">Termux-API</a>
+    </h4>
+    <p>Mengakses fitur perangkat langsung dari Termux.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="terminal multiplexer tmux">
+    <img src="img/tmux.png" alt="Thumbnail Tmux">
+    <h4 class="blog-title">
+        <a href="tmux.html" class="blog-link">Tmux</a>
+    </h4>
+    <p>Terminal multiplexer untuk multitasking di Termux.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="hacking tool installer lazymux">
+    <img src="img/lazymux.png" alt="Thumbnail Lazymux">
+    <h4 class="blog-title">
+        <a href="lazymux.html" class="blog-link">Lazymux</a>
+    </h4>
+    <p>Script otomatis untuk instalasi hacking tools.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="osint theharvester">
+    <img src="img/theharvester.png" alt="Thumbnail TheHarvester">
+    <h4 class="blog-title">
+        <a href="theharvester.html" class="blog-link">TheHarvester</a>
+    </h4>
+    <p>Alat untuk OSINT dan gathering informasi.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="information gathering recon-ng">
+    <img src="img/recon-ng.png" alt="Thumbnail Recon-ng">
+    <h4 class="blog-title">
+        <a href="recon-ng.html" class="blog-link">Recon-ng</a>
+    </h4>
+    <p>Framework pengumpulan informasi open-source.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="dns enumeration knockpy">
+    <img src="img/knockpy.png" alt="Thumbnail Knockpy">
+    <h4 class="blog-title">
+        <a href="knockpy.html" class="blog-link">Knockpy</a>
+    </h4>
+    <p>DNS enumeration tool yang sangat bagus.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="network security yersinia">
+    <img src="img/yersinia.png" alt="Thumbnail Yersinia">
+    <h4 class="blog-title">
+        <a href="yersinia.html" class="blog-link">Yersinia</a>
+    </h4>
+    <p>Alat untuk pengetesan keamanan jaringan layer 2.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="password list cupp">
+    <img src="img/cupp.png" alt="Thumbnail Cupp">
+    <h4 class="blog-title">
+        <a href="cupp.html" class="blog-link">Cupp</a>
+    </h4>
+    <p>Alat untuk membuat custom password list.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="xss xsstrike">
+    <img src="img/xsstrike.png" alt="Thumbnail XSStrike">
+    <h4 class="blog-title">
+        <a href="xsstrike.html" class="blog-link">XSStrike</a>
+    </h4>
+    <p>Alat deteksi dan eksploitasi XSS.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="termux arch-linux termux-arch">
+    <img src="img/termux-arch.png" alt="Thumbnail Termux-Arch">
+    <h4 class="blog-title">
+        <a href="termux-arch.html" class="blog-link">Termux-Arch</a>
+    </h4>
+    <p>Menginstal Arch Linux di Termux.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="tunneling ngrok">
+    <img src="img/ngrok.png" alt="Thumbnail Ngrok">
+    <h4 class="blog-title">
+        <a href="ngrok.html" class="blog-link">Ngrok</a>
+    </h4>
+    <p>Tunneling service untuk membuka local server ke publik.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="apk modification evil-droid">
+    <img src="img/evil-droid.png" alt="Thumbnail Evil-Droid">
+    <h4 class="blog-title">
+        <a href="evil-droid.html" class="blog-link">Evil-Droid</a>
+    </h4>
+    <p>Alat untuk memodifikasi APK dengan payload.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="phishing shellphish">
+    <img src="img/shellphish.png" alt="Thumbnail Shellphish">
+    <h4 class="blog-title">
+        <a href="shellphish.html" class="blog-link">Shellphish</a>
+    </h4>
+    <p>Phishing tool dengan template login situs terkenal.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="apk vulnerability scanner androbugs">
+    <img src="img/androbugs.png" alt="Thumbnail AndroBugs">
+    <h4 class="blog-title">
+        <a href="androbugs.html" class="blog-link">AndroBugs</a>
+    </h4>
+    <p>APK vulnerability scanner.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="sql injection sqliv">
+    <img src="img/sqliv.png" alt="Thumbnail SQLiv">
+    <h4 class="blog-title">
+        <a href="sqliv.html" class="blog-link">SQLiv</a>
+    </h4>
+    <p>SQL injection dorking dan scanner otomatis.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="facebook hacking dark-fb">
+    <img src="img/dark-fb.png" alt="Thumbnail Dark-FB">
+    <h4 class="blog-title">
+        <a href="dark-fb.html" class="blog-link">Dark-FB</a>
+    </h4>
+    <p>Peretasan terhadap akun Facebook.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="vulnerability scanner tsunami">
+    <img src="img/tsunami.png" alt="Thumbnail Tsunami">
+    <h4 class="blog-title">
+        <a href="tsunami.html" class="blog-link">Tsunami</a>
+    </h4>
+    <p>Jaringan vulnerability scanner oleh Google.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="phishing tool zphisher">
+    <img src="img/zphisher.png" alt="Thumbnail Zphisher">
+    <h4 class="blog-title">
+        <a href="zphisher.html" class="blog-link">Zphisher</a>
+    </h4>
+    <p>Phishing tool dengan dukungan beberapa template.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="hacking tools fsociety">
+    <img src="img/fsociety.png" alt="Thumbnail Fsociety">
+    <h4 class="blog-title">
+        <a href="fsociety.html" class="blog-link">Fsociety</a>
+    </h4>
+    <p>Collection of various hacking tools.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="ip tracker ip-tracer">
+    <img src="img/ip-tracer.png" alt="Thumbnail IP-Tracer">
+    <h4 class="blog-title">
+        <a href="ip-tracer.html" class="blog-link">IP-Tracer</a>
+    </h4>
+    <p>Melacak lokasi IP address.</p>
+</div>
+<div class="card" data-theme="light" data-search-tags="osint social media sherlock">
+    <img src="img/sherlock.png" alt="Thumbnail Sherlock">
+    <h4 class="blog-title">
+        <a href="sherlock.html" class="blog-link">Sherlock</a>
+    </h4>
+    <p>OSINT tool untuk mencari profil sosial media seseorang.</p>
+</div>
+
+    
+</div>
+
+
+
+
+    <!-- Tab Games -->
+<div id="games" class="tab-content" data-theme="light">
+    <div class="game-card-container">
+        <div class="game-card" data-theme="light" data-search-tags="snake classic game">
+            <img src="img/game.png" alt="Game Snake" class="game-img">
+            <h4>Snake Classic</h4>
+            <a href="games/snake.html" class="game-link" data-theme="light">Mainkan</a>
+        </div>
+        <div class="game-card" data-theme="light" data-search-tags="tetris challenge game">
+            <img src="img/game.png" alt="Game Tetris" class="game-img">
+            <h4>Tetris Challenge</h4>
+            <a href="games/tetris.html" class="game-link" data-theme="light">Mainkan</a>
+        </div>
+        <div class="game-card" data-theme="light" data-search-tags="teka teki silang puzzle">
+            <img src="img/game.png" alt="Teka Teki" class="game-img">
+            <h4>Teka Teki Silang</h4>
+            <a href="games/teka-teki.html" class="game-link" data-theme="light">Mainkan</a>
+        </div>
+        <div class="game-card" data-theme="light" data-search-tags="trivia quiz game">
+            <img src="img/game.png" alt="Trivia Quiz" class="game-img">
+            <h4>Trivia Quiz</h4>
+            <a href="games/trivia.html" class="game-link" data-theme="light">Mainkan</a>
+        </div>
+    </div>
+</div>
+<footer id="footer" data-theme="light">
+    <div class="footer-item">
+      <a href="#" onclick="showTab('tools')">
+        <i class="fas fa-tools"></i>
+      </a>
+    </div>
+    <div class="footer-item">
+      <a href="#" onclick="showTab('blog')">
+        <i class="fas fa-file-alt"></i>
+      </a>
+    </div>
+    <div class="footer-item">
+      <a href="#" onclick="showTab('games')">
+        <i class="fas fa-gamepad"></i>
+      </a>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+
+</html>
