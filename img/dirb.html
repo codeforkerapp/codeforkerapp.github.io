@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Panduan Dirb - CodeForker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="light">
+  <header class="header" data-theme="light">
+    <div class="menu-toggle" onclick="goBack()">
+      <i class="fas fa-arrow-left"></i>
+    </div>
+    <p2>Dirb</p2>
+  </header>
+  <div class="tutorial-container">
+    <section class="tutorial-section">
+      <div class="thumbnail">
+        <img src="img/dirb.png" alt="Thumbnail" width="320" height="180">
+      </div>
+      <h2>📘 Apa itu Dirb?</h2>
+      <p>Dirb adalah tool <i>web content scanner</i> yang digunakan untuk menemukan direktori dan file tersembunyi di
+        website. Dirb melakukan ini dengan mengirimkan request ke web server dan menganalisis respon yang diterima. Dirb
+        sangat berguna untuk penetration testing, karena dapat membantu menemukan direktori admin, file backup, dan
+        informasi sensitif lainnya yang mungkin tidak terlihat secara langsung.</p>
+    </section>
+    <section class="tutorial-section">
+      <h2>🛠️ Instalasi</h2>
+      <h3>Termux</h3>
+      <div class="warning-box">
+        <p><strong>Informasi:</strong> Dirb tidak tersedia di repositori paket Termux. Sebagai alternatif, Anda dapat
+          menggunakan tool lain seperti Gobuster atau Feroxbuster.</p>
+      </div>
+      <h4>Gobuster</h4>
+      <div class="code-snippet">
+        <button class="copy-btn" onclick="copyCode(this)">
+          <i class="fas fa-copy"></i>
+        </button>
+        <pre><code>pkg update && pkg upgrade -y
+pkg install gobuster -y</code></pre>
+      </div>
+      <h4>Feroxbuster</h4>
+      <div class="code-snippet">
+        <button class="copy-btn" onclick="copyCode(this)">
+          <i class="fas fa-copy"></i>
+        </button>
+        <pre><code>pkg update && pkg upgrade -y
+pkg install feroxbuster -y</code></pre>
+      </div>
+
+      <h3>Linux (Ubuntu/Debian)</h3>
+      <div class="code-snippet">
+        <button class="copy-btn" onclick="copyCode(this)">
+          <i class="fas fa-copy"></i>
+        </button>
+        <pre><code>sudo apt update
+sudo apt install dirb -y</code></pre>
+      </div>
+    </section>
+    <section class="tutorial-section">
+      <h2>🔍 Penggunaan Dasar (Linux)</h2>
+      <h3>Cek Versi</h3>
+      <div class="code-snippet">
+        <button class="copy-btn" onclick="copyCode(this)">
+          <i class="fas fa-copy"></i>
+        </button>
+        <pre><code>dirb -v</code></pre>
+      </div>
+      <h3>Scan Website</h3>
+      <div class="code-snippet">
+        <button class="copy-btn" onclick="copyCode(this)">
+          <i class="fas fa-copy"></i>
+        </button>
+        <pre><code>dirb http://contoh.com /usr/share/dirb/wordlists/common.txt</code></pre>
+      </div>
+      <h3>Menggunakan Wordlist Custom</h3>
+      <div class="code-snippet">
+        <button class="copy-btn" onclick="copyCode(this)">
+          <i class="fas fa-copy"></i>
+        </button>
+        <pre><code>dirb http://contoh.com wordlist.txt</code></pre>
+      </div>
+    </section>
+    <section class="tutorial-section">
+      <h2>⚠️ Peringatan Penting</h2>
+      <div class="warning-box">
+        <p><strong>Perhatian!</strong> Dirb adalah alat yang powerful. Gunakan dengan bijak dan bertanggung jawab.</p>
+        <ul>
+          <li>Pastikan Anda memiliki izin sebelum melakukan scan terhadap website.</li>
+          <li>Jangan gunakan Dirb untuk aktivitas ilegal.</li>
+          <li>Gunakan Dirb hanya untuk tujuan pengujian keamanan dan pendidikan.</li>
+        </ul>
+        <p>Penyalahgunaan Dirb dapat melanggar hukum dan menyebabkan kerugian bagi orang lain!</p>
+      </div>
+    </section>
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>

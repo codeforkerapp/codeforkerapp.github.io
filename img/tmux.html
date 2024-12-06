@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Panduan Tmux - CodeForker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+    <header class="header" data-theme="light">
+        <div class="menu-toggle" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+        <p2>Tmux</p2>
+    </header>
+    <div class="tutorial-container">
+        <section class="tutorial-section">
+        	<div class="thumbnail">
+    <img src="img/tmux.png" alt="Thumbnail" width="320" height="180">
+</div>
+            <h2>📘 Apa itu Tmux?</h2>
+            <p>Tmux adalah <i>terminal multiplexer</i>. Tmux memungkinkan kamu untuk membuat, mengakses, dan mengontrol multiple terminal sessions dari satu layar. Dengan Tmux, kamu bisa menjalankan proses di background, berpindah antar sessions dengan mudah, dan membagi layar menjadi beberapa panes. Tmux sangat berguna untuk multitasking dan mengelola banyak aplikasi command-line secara efisien.</p>
+        </section>
+        <section class="tutorial-section">
+            <h2>🛠️ Instalasi</h2>
+            <h3>Termux</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>pkg update && pkg upgrade -y
+pkg install tmux -y</code></pre>
+            </div>
+
+            <h3>Linux (Ubuntu/Debian)</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>sudo apt update
+sudo apt install tmux -y</code></pre>
+            </div>
+        </section>
+        <section class="tutorial-section">
+            <h2>🔍 Penggunaan Dasar</h2>
+            <h3>Memulai Tmux Session</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>tmux</code></pre>
+            </div>
+            <h3>Membuat Window Baru</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>Ctrl+b c</code></pre>
+            </div>
+            <h3>Berpindah Antar Window</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>Ctrl+b n  (window selanjutnya)
+Ctrl+b p  (window sebelumnya)</code></pre>
+            </div>
+            <h3>Membagi Layar (Pane)</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>Ctrl+b "  (membagi secara horizontal)
+Ctrl+b %  (membagi secara vertikal)</code></pre>
+            </div>
+            <h3>Berpindah Antar Pane</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>Ctrl+b arah panah</code></pre>
+            </div>
+            <h3>Melepas Tmux Session (Detach)</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>Ctrl+b d</code></pre>
+            </div>
+            <h3>Menyambung Kembali ke Tmux Session (Attach)</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>tmux attach</code></pre>
+            </div>
+        </section>
+                <section class="tutorial-section">
+            <h2>⚠️ Peringatan Penting</h2>
+            <div class="warning-box">
+                <p><strong>Perhatian!</strong> Meskipun Tmux adalah alat yang sah, penting untuk menggunakannya dengan bijak dan bertanggung jawab.</p>
+                <ul>
+                    <li>Pahami perintah dan konfigurasi Tmux dengan baik sebelum menggunakannya.</li>
+                    <li>Pastikan keamanan server atau sistem tempat kamu menggunakan Tmux.</li>
+                    <li>Hindari menjalankan perintah yang tidak kamu mengerti di dalam Tmux session.</li>
+                </ul>
+            </div>
+        </section>
+        
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

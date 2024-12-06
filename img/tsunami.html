@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Panduan Tsunami - CodeForker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+    <header class="header" data-theme="light">
+        <div class="menu-toggle" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+        <p2>Tsunami</p2>
+    </header>
+    <div class="tutorial-container">
+        <section class="tutorial-section">
+        	<div class="thumbnail">
+    <img src="img/tsunami.png" alt="Thumbnail" width="320" height="180">
+</div>
+            <h2>📘 Apa itu Tsunami?</h2>
+            <p>Tsunami adalah <i>network security scanner</i> yang dikembangkan oleh Google. Tool ini dapat mendeteksi berbagai kerentanan keamanan pada jaringan, seperti <i>open port</i> yang tidak aman, <i>service</i> yang rentan, dan konfigurasi yang salah. Tsunami menggunakan plugin system yang extensible, sehingga mudah dikonfigurasi dan disesuaikan dengan kebutuhan.</p>
+        </section>
+        <section class="tutorial-section">
+            <h2>🛠️ Instalasi</h2>
+            <h3>Termux</h3>
+            <div class="warning-box">
+                <p><strong>Informasi:</strong> Tsunami tidak tersedia di repositori paket Termux. Kamu mungkin perlu mencoba metode instalasi alternatif, seperti mengunduh source code dari GitHub dan melakukan kompilasi manual.</p>
+            </div>
+
+            <h3>Linux (Ubuntu/Debian)</h3>
+            <p>Tsunami membutuhkan <b>nmap</b> dan <b>ncrack</b>. Pastikan kamu sudah menginstalnya:</p>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>sudo apt update
+sudo apt install nmap ncrack -y</code></pre>
+            </div>
+            <p>Kemudian, jalankan script instalasi Tsunami:</p>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>bash -c "$(curl -sfL https://raw.githubusercontent.com/google/tsunami-security-scanner/master/install.sh)"</code></pre>
+            </div>
+        </section>
+        <section class="tutorial-section">
+            <h2>🔍 Penggunaan Dasar</h2>
+            <h3>Melakukan Scan</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>tsunami scan -n 192.168.1.0/24 -p 80,443</code></pre>
+            </div>
+            <p>Keterangan:</p>
+            <ul>
+                <li><code>-n</code>: Network atau IP address yang ingin di-scan.</li>
+                <li><code>-p</code>: Port yang ingin di-scan.</li>
+            </ul>
+            <h3>Opsi Tambahan</h3>
+            <p>Tsunami memiliki banyak opsi tambahan, seperti:</p>
+            <ul>
+                <li><code>-r</code>: Path ke file hasil scan.</li>
+                <li><code>-v</code>: Menampilkan informasi verbose.</li>
+            </ul>
+            <p>Untuk melihat daftar lengkap opsi, jalankan <code>tsunami -h</code>.</p>
+        </section>
+        <section class="tutorial-section">
+            <h2>⚠️ Peringatan Penting</h2>
+            <div class="warning-box">
+                <p><strong>Perhatian!</strong> Tsunami adalah alat yang powerful. Gunakan dengan bijak dan bertanggung jawab.</p>
+                <ul>
+                    <li>Pastikan Anda memiliki izin sebelum melakukan scan terhadap jaringan.</li>
+                    <li>Jangan gunakan Tsunami untuk aktivitas ilegal.</li>
+                    <li>Gunakan Tsunami hanya untuk tujuan pengujian keamanan dan pendidikan.</li>
+                </ul>
+                <p>Penyalahgunaan Tsunami dapat melanggar hukum dan menyebabkan kerugian bagi orang lain!</p>
+            </div>
+        </section>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

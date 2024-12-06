@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Panduan John the Ripper - CodeForker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+    <header class="header" data-theme="light">
+        <div class="menu-toggle" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+        <p2>John the Ripper</p2>
+    </header>
+    <div class="tutorial-container">
+        <section class="tutorial-section">
+        	<div class="thumbnail">
+    <img src="img/johntheripper.png" alt="Thumbnail" width="320" height="180">
+</div>
+            <h2>📘 Apa itu John the Ripper?</h2>
+            <p>John the Ripper (JtR) adalah tool *password cracker* open-source yang cepat dan populer. JtR dapat digunakan untuk menguji kekuatan password dengan melakukan *brute-force attack*, *dictionary attack*, dan teknik cracking lainnya. JtR mendukung berbagai format hash password, termasuk  Linux, Windows, dan database.</p>
+        </section>
+        <section class="tutorial-section">
+            <h2>🛠️ Instalasi</h2>
+            <h3>Termux</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>pkg update && pkg upgrade -y
+pkg install john -y</code></pre>
+            </div>
+            <h3>Linux (Ubuntu/Debian)</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>sudo apt update
+sudo apt install john -y</code></pre>
+            </div>
+        </section>
+        <section class="tutorial-section">
+            <h2>🔍 Penggunaan Dasar</h2>
+            
+            <h3>Cek Versi</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>john --version</code></pre>
+            </div>
+            <h3>Cracking Password dengan Wordlist</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>john --wordlist=wordlist.txt hash.txt</code></pre>
+            </div>
+            <h3>Menampilkan Password yang Berhasil di-crack</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>john --show hash.txt</code></pre>
+            </div>
+            <h3>Format Hash yang Didukung</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>john --list=formats</code></pre>
+            </div>
+        </section>
+        <section class="tutorial-section">
+            <h2>⚠️ Peringatan Penting</h2>
+            <div class="warning-box">
+                <p><strong>Perhatian!</strong> John the Ripper adalah alat yang powerful. Gunakan dengan bijak dan bertanggung jawab.</p>
+                <ul>
+                    <li>Pastikan Anda memiliki izin sebelum mencoba meng-crack password.</li>
+                    <li>Jangan gunakan John the Ripper untuk aktivitas ilegal.</li>
+                    <li>Gunakan John the Ripper hanya untuk tujuan pengujian keamanan dan pendidikan.</li>
+                </ul>
+                <p>Penyalahgunaan John the Ripper dapat melanggar hukum dan menyebabkan kerugian bagi orang lain!</p>
+            </div>
+        </section>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

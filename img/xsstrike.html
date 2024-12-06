@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Panduan XSStrike - CodeForker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+    <header class="header" data-theme="light">
+        <div class="menu-toggle" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+        <p2>XSStrike</p2>
+    </header>
+    <div class="tutorial-container">
+        <section class="tutorial-section">
+        	<div class="thumbnail">
+    <img src="img/xsstrike.png" alt="Thumbnail" width="320" height="180">
+</div>
+            <h2>📘 Apa itu XSStrike?</h2>
+            <p>XSStrike adalah <i>advanced Cross Site Scripting (XSS) detection suite</i> yang dilengkapi dengan berbagai fitur canggih, seperti <i>intelligent payload generator</i>, <i>powerful fuzzing engine</i>, dan <i>fast crawler</i>. XSStrike dapat mendeteksi berbagai jenis XSS vulnerability, termasuk <i>reflected</i> dan <i>DOM-based XSS</i>. </p>
+        </section>
+        <section class="tutorial-section">
+            <h2>🛠️ Instalasi</h2>
+            <h3>Termux</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>pkg update && pkg upgrade -y
+pkg install python3 git -y
+git clone https://github.com/s0md3v/XSStrike.git
+cd XSStrike
+pip3 install -r requirements.txt</code></pre>
+            </div>
+
+            <h3>Linux (Ubuntu/Debian)</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>sudo apt update
+sudo apt install python3 python3-pip git -y
+git clone https://github.com/s0md3v/XSStrike.git
+cd XSStrike
+pip3 install -r requirements.txt</code></pre>
+            </div>
+        </section>
+        <section class="tutorial-section">
+            <h2>🔍 Penggunaan Dasar</h2>
+            <h3>Menjalankan XSStrike</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>python3 xsstrike.py -u url</code></pre>
+            </div>
+            <p>Keterangan:</p>
+            <ul>
+                <li><code>-u</code>: URL target yang ingin di-scan.</li>
+            </ul>
+            <h3>Opsi Tambahan</h3>
+            <p>XSStrike memiliki banyak opsi tambahan, seperti:</p>
+            <ul>
+                <li><code>--crawl</code>: Melakukan <i>crawling</i> pada website.</li>
+                <li><code>--data "param1=value1&param2=value2"</code>: Mengirimkan data POST.</li>
+                <li><code>--headers "Header1: Value1\nHeader2: Value2"</code>: Menambahkan custom headers.</li>
+                <li><code>--fuzzer</code>: Menjalankan <i>fuzzer</i> untuk menemukan input yang vulnerable.</li>
+            </ul>
+            <p>Untuk melihat daftar lengkap opsi, jalankan <code>python3 xsstrike.py -h</code>.</p>
+        </section>
+        <section class="tutorial-section">
+            <h2>⚠️ Peringatan Penting</h2>
+            <div class="warning-box">
+                <p><strong>Perhatian!</strong> XSStrike adalah alat yang powerful. Gunakan dengan bijak dan bertanggung jawab.</p>
+                <ul>
+                    <li>Pastikan Anda memiliki izin sebelum melakukan scan terhadap website.</li>
+                    <li>Jangan gunakan XSStrike untuk aktivitas ilegal.</li>
+                    <li>Gunakan XSStrike hanya untuk tujuan pengujian keamanan dan pendidikan.</li>
+                </ul>
+                <p>Penyalahgunaan XSStrike dapat melanggar hukum dan menyebabkan kerugian bagi orang lain!</p>
+            </div>
+        </section>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

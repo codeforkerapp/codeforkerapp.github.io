@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Panduan Hashcat - CodeForker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+    <header class="header" data-theme="light">
+        <div class="menu-toggle" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+        <p2>Hashcat</p2>
+    </header>
+    <div class="tutorial-container">
+        <section class="tutorial-section">
+        	<div class="thumbnail">
+    <img src="img/hashcat.png" alt="Thumbnail" width="320" height="180">
+</div>
+            <h2>📘 Apa itu Hashcat?</h2>
+            <p>Hashcat adalah tool *password recovery* yang  dikenal dengan kecepatan dan kemampuannya. Hashcat  menggunakan  kekuatan  GPU  untuk  melakukan  *brute-force attack*, *dictionary attack*,  dan  serangan  lainnya  terhadap  berbagai  jenis  hash  password. Hashcat mendukung  berbagai  algoritma  hash  dan  dapat  digunakan  untuk  memulihkan  password  yang  hilang  atau  lupa,  serta  untuk  menguji  kekuatan  password.</p>
+        </section>
+        <section class="tutorial-section">
+            <h2>🛠️ Instalasi</h2>
+            <h3>Termux</h3>
+            <div class="warning-box">
+                <p><strong>Informasi:</strong> Hashcat membutuhkan dukungan GPU, yang tidak tersedia di Termux. Anda mungkin perlu menggunakan alternatif seperti John the Ripper di Termux.</p>
+            </div>
+            <h3>Linux (Ubuntu/Debian)</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>sudo apt update
+sudo apt install hashcat -y</code></pre>
+            </div>
+        </section>
+        <section class="tutorial-section">
+            <h2>🔍 Penggunaan Dasar</h2>
+            
+            <h3>Cek Versi</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>hashcat --version</code></pre>
+            </div>
+            <h3>Cracking Password dengan Wordlist</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>hashcat -m mode_hash -a 0 hash.txt wordlist.txt</code></pre>
+            </div>
+            <h3>Menampilkan Password yang Berhasil di-crack</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>hashcat -m mode_hash -a 0 hash.txt wordlist.txt --show</code></pre>
+            </div>
+            <h3>Daftar Mode Hash yang Didukung</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>hashcat --help</code></pre>
+            </div>
+        </section>
+        <section class="tutorial-section">
+            <h2>⚠️ Peringatan Penting</h2>
+            <div class="warning-box">
+                <p><strong>Perhatian!</strong> Hashcat adalah alat yang powerful. Gunakan dengan bijak dan bertanggung jawab.</p>
+                <ul>
+                    <li>Pastikan Anda memiliki izin sebelum mencoba meng-crack password.</li>
+                    <li>Jangan gunakan Hashcat untuk aktivitas ilegal.</li>
+                    <li>Gunakan Hashcat hanya untuk tujuan pengujian keamanan dan pendidikan.</li>
+                </ul>
+                <p>Penyalahgunaan Hashcat dapat melanggar hukum dan menyebabkan kerugian bagi orang lain!</p>
+            </div>
+        </section>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Panduan Aircrack-ng - CodeForker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+    <header class="header" data-theme="light">
+        <div class="menu-toggle" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+        <p2>Aircrack-ng</p2>
+    </header>
+    <div class="tutorial-container">
+        <section class="tutorial-section">
+        	<div class="thumbnail">
+    <img src="img/aircrack-ng.png" alt="Thumbnail" width="320" height="180">
+</div>
+            <h2>📘 Apa itu Aircrack-ng?</h2>
+            <p>Aircrack-ng adalah suite tool untuk menguji keamanan jaringan Wi-Fi.  Aircrack-ng dapat digunakan untuk  memantau,  menyerang,  menguji,  dan  meng-crack  jaringan  Wi-Fi.  Dengan  Aircrack-ng,  Anda  dapat  menangkap  paket  data,  melakukan  *deauthentication attack*,  membuat  *fake access point*,  dan  meng-crack  kunci  WEP  dan  WPA-PSK.</p>
+        </section>
+        <section class="tutorial-section">
+            <h2>🛠️ Instalasi</h2>
+            <h3>Termux</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>pkg update && pkg upgrade -y
+pkg install root-repo -y
+pkg install aircrack-ng -y</code></pre>
+            </div>
+            <h3>Linux (Ubuntu/Debian)</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>sudo apt update
+sudo apt install aircrack-ng -y</code></pre>
+            </div>
+        </section>
+        <section class="tutorial-section">
+            <h2>🔍 Penggunaan Dasar</h2>
+            <h3>Memantau Jaringan Wi-Fi</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>airmon-ng start wlan0
+airodump-ng wlan0mon</code></pre>
+            </div>
+            <h3>Menangkap Handshake WPA</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>airodump-ng -c channel --bssid BSSID wlan0mon</code></pre>
+            </div>
+            <h3>Melakukan Deauthentication Attack</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>aireplay-ng -0 10 -a BSSID wlan0mon</code></pre>
+            </div>
+            <h3>Meng-crack Kunci WPA dengan Wordlist</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>aircrack-ng -w wordlist.txt capture.cap</code></pre>
+            </div>
+        </section>
+        <section class="tutorial-section">
+            <h2>⚠️ Peringatan Penting</h2>
+            <div class="warning-box">
+                <p><strong>Perhatian!</strong> Aircrack-ng adalah alat yang powerful. Gunakan dengan bijak dan bertanggung jawab.</p>
+                <ul>
+                    <li>Pastikan Anda memiliki izin sebelum menguji jaringan Wi-Fi.</li>
+                    <li>Jangan gunakan Aircrack-ng untuk aktivitas ilegal.</li>
+                    <li>Gunakan Aircrack-ng hanya untuk tujuan pengujian keamanan dan pendidikan.</li>
+                </ul>
+                <p>Penyalahgunaan Aircrack-ng dapat melanggar hukum dan menyebabkan kerugian bagi orang lain!</p>
+            </div>
+        </section>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

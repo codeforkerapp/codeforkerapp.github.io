@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Panduan Slowloris - CodeForker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+    <header class="header" data-theme="light">
+        <div class="menu-toggle" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+        <p2>Slowloris</p2>
+    </header>
+    <div class="tutorial-container">
+        <section class="tutorial-section">
+        	<div class="thumbnail">
+    <img src="img/slowloris.png" alt="Thumbnail" width="320" height="180">
+</div>
+            <h2>📘 Apa itu Slowloris?</h2>
+            <p>Slowloris adalah tool untuk melakukan serangan Denial-of-Service (DoS) terhadap web server. Slowloris bekerja dengan mengirimkan HTTP request secara perlahan dan terus-menerus ke web server target, sehingga menghabiskan resource server dan membuatnya tidak dapat melayani request dari pengguna lain. Slowloris efektif karena hanya membutuhkan sedikit bandwidth dan dapat diluncurkan dari satu komputer.</p>
+        </section>
+        <section class="tutorial-section">
+            <h2>🛠️ Instalasi</h2>
+            <h3>Termux</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>pkg update && pkg upgrade -y
+pkg install python -y
+git clone https://github.com/gkbrk/slowloris.git
+cd slowloris</code></pre>
+            </div>
+            <h3>Linux (Ubuntu/Debian)</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>sudo apt update
+sudo apt install python3 -y
+git clone https://github.com/gkbrk/slowloris.git
+cd slowloris</code></pre>
+            </div>
+        </section>
+        <section class="tutorial-section">
+            <h2>🔍 Penggunaan Dasar</h2>
+            <h3>Menjalankan Slowloris</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>python3 slowloris.py -v -s jumlah_socket -p 80 -u http://contoh.com</code></pre>
+            </div>
+            <p>Keterangan:</p>
+            <ul>
+                <li><code>-v</code>: Mode verbose (menampilkan informasi detail).</li>
+                <li><code>-s</code>: Jumlah socket yang digunakan (semakin banyak, semakin kuat serangan).</li>
+                <li><code>-p</code>: Port target (default: 80).</li>
+                <li><code>-u</code>: URL target.</li>
+            </ul>
+        </section>
+        <section class="tutorial-section">
+            <h2>⚠️ Peringatan Penting</h2>
+            <div class="warning-box">
+                <p><strong>Perhatian!</strong> Slowloris adalah alat yang powerful. Gunakan dengan bijak dan bertanggung jawab.</p>
+                <ul>
+                    <li>Pastikan Anda memiliki izin sebelum melakukan serangan DoS terhadap server manapun.</li>
+                    <li>Jangan gunakan Slowloris untuk aktivitas ilegal.</li>
+                    <li>Gunakan Slowloris hanya untuk tujuan pengujian keamanan dan pendidikan.</li>
+                </ul>
+                <p>Penyalahgunaan Slowloris dapat melanggar hukum dan menyebabkan kerugian bagi orang lain!</p>
+            </div>
+        </section>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

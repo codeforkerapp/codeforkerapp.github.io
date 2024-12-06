@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Panduan Lazymux - CodeForker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+    <header class="header" data-theme="light">
+        <div class="menu-toggle" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+        <p2>Lazymux</p2>
+    </header>
+    <div class="tutorial-container">
+        <section class="tutorial-section">
+        	<div class="thumbnail">
+    <img src="img/lazymux.png" alt="Thumbnail" width="320" height="180">
+</div>
+            <h2>📘 Apa itu Lazymux?</h2>
+            <p>Lazymux adalah <i>tool installer</i> untuk Termux yang dirancang untuk memudahkan pengguna dalam menginstal berbagai macam tool hacking dan penetration testing. Lazymux menyediakan banyak kategori tool, seperti information gathering, vulnerability analysis, exploitation tools, dan lain-lain. Dengan Lazymux, kamu bisa dengan cepat membangun lingkungan penetration testing di Termux tanpa harus menginstal setiap tool secara manual.</p>
+        </section>
+        <section class="tutorial-section">
+            <h2>🛠️ Instalasi</h2>
+            <h3>Termux</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>pkg update && pkg upgrade -y
+pkg install git python -y
+git clone https://github.com/Gameye98/Lazymux
+cd Lazymux
+python lazymux.py</code></pre>
+            </div>
+            <h3>Linux (Ubuntu/Debian)</h3>
+            <div class="warning-box">
+                <p><strong>Informasi:</strong> Lazymux dirancang khusus untuk Termux dan tidak tersedia untuk Linux. Kamu bisa menginstal tool-tool hacking secara manual di Linux menggunakan `apt`.</p>
+            </div>
+        </section>
+        <section class="tutorial-section">
+            <h2>🔍 Penggunaan Dasar (Termux)</h2>
+            <p>Setelah menjalankan `python lazymux.py`, kamu akan melihat menu Lazymux. Pilih kategori tool yang ingin kamu install, lalu pilih tool yang diinginkan. Lazymux akan secara otomatis mengunduh dan menginstal tool tersebut.</p>
+            <p>Beberapa tool yang tersedia di Lazymux:</p>
+            <ul>
+                <li>Nmap</li>
+                <li>Sqlmap</li>
+                <li>Metasploit</li>
+                <li>Hydra</li>
+                <li>John the Ripper</li>
+                <li>dan banyak lagi!</li>
+            </ul>
+        </section>
+        <section class="tutorial-section">
+            <h2>⚠️ Peringatan Penting</h2>
+            <div class="warning-box">
+                <p><strong>Perhatian!</strong> Lazymux menyediakan tool yang powerful. Gunakan dengan bijak dan bertanggung jawab.</p>
+                <ul>
+                    <li>Pastikan Anda memiliki izin sebelum menggunakan tool hacking.</li>
+                    <li>Jangan gunakan tool hacking untuk aktivitas ilegal.</li>
+                    <li>Gunakan tool hacking hanya untuk tujuan pengujian keamanan dan pendidikan.</li>
+                </ul>
+                <p>Penyalahgunaan tool hacking dapat melanggar hukum dan menyebabkan kerugian bagi orang lain!</p>
+            </div>
+        </section>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
