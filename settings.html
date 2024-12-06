@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Pengaturan - CodeForker</title>
+    <style>
+        /* Popup Styles */
+        .modal {
+            display: none; /* Tersembunyi secara default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Latar belakang transparan */
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px; /* Lebar maksimum */
+            border-radius: 8px; /* Sudut melengkung */
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Tambahkan ke CSS Anda */
+        [data-theme="light"] .settings-section {
+            background-color: #f0f4f8; /* Warna latar belakang untuk tema terang */
+            color: #000000; /* Warna teks untuk tema terang */
+        }
+
+        [data-theme="dark"] .settings-section {
+            background-color: #1a202c; /* Warna latar belakang untuk tema gelap */
+            color: #ffffff; /* Warna teks untuk tema gelap */
+        }
+
+        [data-theme="light"] .modal-content {
+            background-color: #f0f4f8; /* Warna latar belakang untuk modal tema terang */
+            color: #000000; /* Warna teks untuk modal tema terang */
+        }
+
+        [data-theme="dark"] .modal-content {
+            background-color: #1a202c; /* Warna latar belakang untuk modal tema gelap */
+            color: #ffffff; /* Warna teks untuk modal tema gelap */
+        }
+    </style>
+</head>
+<body data-theme="light">
+    <header class="header" data-theme="light">
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <p2>Pengaturan</p2>        
+        <div></div>
+    </header>
+
+    <div id="slideMenu" data-theme="light">
+        <img src="img/logo.png" alt="Logo Aplikasi" class="menu-logo">
+        <hr class="menu-divider">
+        <a href="index.html"><i class="fas fa-home"></i> Beranda</a>
+        <hr class="menu-divider">
+        <a href="#"><i class="fas fa-gear"></i> Pengaturan</a>
+        <hr class="menu-divider">
+        <a href="#"><i class="fas fa-crown"></i> Premium</a>
+        <hr class="menu-divider">
+        <a href="about.html"><i class="fas fa-circle-info"></i> Tentang Kami</a>
+        <hr class="menu-divider">
+    </div>
+
+    <div class="content">
+        <div class="settings-container">
+            <div class="settings-section" data-theme="light">
+                <div class="settings-section-title" data-theme="light">Tampilan</div>
+                <div class="settings-item" data-theme="light">
+                    <span>Mode Gelap</span>
+                    <label class="switch">
+                        <input type="checkbox" id="darkModeToggle" onchange="toggleTheme()">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="settings-section" data-theme="light">
+                <div class="settings-section-title" data-theme="light">Preferensi</div>
+                <div class="settings-item" data-theme="light">
+                    <span>Notifikasi</span>
+                    <label class="switch">
+                        <input type="checkbox" id="notificationToggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="settings-item" data-theme="light">
+                    <span>Bahasa</span>
+                    <select id="languageSelect" style="border-radius: 8px; padding: 5px;">
+                        <option value="id">Indonesia</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="settings-section" data-theme="light">
+                <div class="settings-section-title" data-theme="light">Akun</div>
+                <div class="settings-item" data-theme="light" onclick="openModal('privacyModal')">
+                    <span>Privasi</span>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="settings-item" data-theme="light" onclick="openModal('securityModal')">
+                    <span>Keamanan</span>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup Modal untuk Privasi -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('privacyModal')">&times;</span>
+            <h3>Privasi</h3>
+            <p>
+                Di CodeForker, kami sangat menghargai privasi pengguna kami. Kami berkomitmen untuk melindungi informasi pribadi Anda
+                dan memastikan bahwa data Anda aman. Kami tidak akan mengumpulkan data pribadi tanpa izin Anda.
+            </p>
+        </div>
+    </div>
+
+    <!-- Popup Modal untuk Keamanan -->
+    <div id="securityModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('securityModal')">&times;</span>
+            <h3>Keamanan</h3>
+            <p>
+                Keamanan data Anda adalah prioritas utama kami di CodeForker. Kami menerapkan berbagai langkah keamanan
+                untuk melindungi informasi Anda dari ancaman dan akses yang tidak sah. Kami menggunakan enkripsi yang kuat
+                untuk melindungi data Anda selama transmisi dan penyimpanan.
+            </p>
+        </div>
+    </div>
+
+    <script>
+let isDarkTheme = localStorage.getItem('theme') === 'dark'; // Memuat tema dari localStorage
+
+// Mengatur tema saat halaman dimuat
+const currentTheme = localStorage.getItem('theme') || 'light';
+document.body.setAttribute('data-theme', currentTheme); // Atur tema di awal
+toggleThemeDisplay(); // Menyesuaikan tampilan berdasarkan tema yang tersimpan
+
+// Fungsi untuk menampilkan tema berdasarkan status isDarkTheme
+function toggleThemeDisplay() {
+    const body = document.body;
+    const header = document.querySelector('.header');
+    const slideMenu = document.getElementById('slideMenu');
+
+    // Atur tema untuk body, header, dan slideMenu
+    if (isDarkTheme) {
+        body.setAttribute('data-theme', 'dark');
+        header.setAttribute('data-theme', 'dark');
+        slideMenu.setAttribute('data-theme', 'dark');
+    } else {
+        body.setAttribute('data-theme', 'light');
+        header.setAttribute('data-theme', 'light');
+        slideMenu.setAttribute('data-theme', 'light');
+    }
+
+    // Update tema untuk semua section
+    updateSettingsTheme();
+}
+
+// Fungsi untuk toggle menu
+function toggleMenu() {
+    const slideMenu = document.getElementById('slideMenu');
+    if (slideMenu.style.display === 'block') {
+        slideMenu.style.left = '-250px';
+        setTimeout(() => slideMenu.style.display = 'none', 300);
+    } else {
+        slideMenu.style.display = 'block';
+        setTimeout(() => slideMenu.style.left = '0', 10);
+    }
+}
+
+// Fungsi untuk toggle tema
+function toggleTheme() {
+    isDarkTheme = !isDarkTheme; // Toggle status tema
+    localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light'); // Simpan status tema ke localStorage
+    toggleThemeDisplay(); // Update tampilan berdasarkan tema baru
+
+    // Atur status checkbox
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    darkModeToggle.checked = isDarkTheme; // Set status checkbox sesuai tema
+}
+
+// Fungsi untuk membuka modal
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = "block";
+}
+
+// Fungsi untuk menutup modal
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = "none";
+}
+
+// Menambahkan event listener untuk klik di luar menu
+document.addEventListener('click', function(event) {
+    const slideMenu = document.getElementById('slideMenu');
+    const menuToggle = document.querySelector('.menu-toggle');
+
+    if (slideMenu.style.display === 'block' && !slideMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+        slideMenu.style.left = '-250px';
+        setTimeout(() => slideMenu.style.display = 'none', 300);
+    }
+});
+
+// Fungsi untuk memperbarui tema pada settings container
+function updateSettingsTheme() {
+    const sections = document.querySelectorAll('.settings-section, .settings-section-title, .settings-item');
+    sections.forEach(section => {
+        section.setAttribute('data-theme', document.body.getAttribute('data-theme'));
+    });
+}
+
+// Jalankan saat halaman dimuat
+document.addEventListener('DOMContentLoaded', () => {
+    // Memastikan tema konsisten saat halaman dimuat
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    document.body.setAttribute('data-theme', currentTheme);
+    
+    // Atur status checkbox sesuai tema
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    darkModeToggle.checked = currentTheme === 'dark'; // Menyimpan status checkbox sesuai tema
+
+    // Update elemen-elemen kunci
+    toggleThemeDisplay(); // Pastikan untuk mengupdate tampilan sesuai tema
+});
+</script>
+</body>
+</html>
