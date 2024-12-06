@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 function goBack() {
-    window.history.back();
+    window.location.href = "index.html";
 }
 
         function copyCode(button) {
@@ -193,8 +193,6 @@ function searchContent() {
         }
     });
 }
-
-// ... fungsi-fungsi sebelumnya tetap sama ...
 
 // Tambahan: Reset pencarian saat ganti tab
 function showTab(tabName) {
