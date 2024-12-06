@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Panduan WPScan - CodeForker</title>
+    <link rel="stylesheet" href="https://codeforkerapp.github.io/css/style.css">
+</head>
+<body data-theme="light">
+    <header class="header" data-theme="light">
+        <div class="menu-toggle" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+        <p2>WPScan</p2>
+    </header>
+    <div class="tutorial-container">
+        <section class="tutorial-section">
+        	<div class="thumbnail">
+    <img src="img/wpscan.png" alt="Thumbnail" width="320" height="180">
+</div>
+            <h2>📘 Apa itu WPScan?</h2>
+            <p>WPScan adalah <i>black box WordPress vulnerability scanner</i> yang digunakan untuk memindai situs web WordPress dan mengidentifikasi potensi celah keamanan. WPScan dapat mendeteksi versi WordPress yang rentan, plugin dan tema yang tidak aman, konfigurasi yang lemah, dan informasi sensitif lainnya. WPScan sangat berguna untuk penetration testing dan audit keamanan website WordPress.</p>
+        </section>
+        <section class="tutorial-section">
+            <h2>🛠️ Instalasi</h2>
+            <h3>Termux</h3>
+            <div class="warning-box">
+                <p><strong>Informasi:</strong> WPScan membutuhkan Ruby untuk dijalankan. Meskipun Ruby bisa diinstall di Termux,  menginstall WPScan di Termux bisa jadi rumit karena dependensi dan konfigurasi yang diperlukan.  Sebagai alternatif, Anda dapat menggunakan tool online seperti <a href="https://wpscan.com/">WPScan Online</a> atau mencoba menginstalnya secara manual dengan mengikuti panduan di <a href="https://github.com/wpscanteam/wpscan">GitHub WPScan</a>.</p>
+            </div>
+
+            <h3>Linux (Ubuntu/Debian)</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>sudo apt update
+sudo apt install ruby ruby-dev git -y
+git clone https://github.com/wpscanteam/wpscan.git
+cd wpscan
+sudo gem install bundler && bundle install --without test</code></pre>
+            </div>
+        </section>
+        <section class="tutorial-section">
+            <h2>🔍 Penggunaan Dasar (Linux)</h2>
+            <h3>Cek Versi</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>wpscan --version</code></pre>
+            </div>
+            <h3>Scan Website</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>wpscan --url http://contoh.com</code></pre>
+            </div>
+            <h3>Enumerasi User</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>wpscan --url http://contoh.com --enumerate u</code></pre>
+            </div>
+            <h3>Enumerasi Plugin</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>wpscan --url http://contoh.com --enumerate p</code></pre>
+            </div>
+        </section>
+        <section class="tutorial-section">
+            <h2>⚠️ Peringatan Penting</h2>
+            <div class="warning-box">
+                <p><strong>Perhatian!</strong> WPScan adalah alat yang powerful. Gunakan dengan bijak dan bertanggung jawab.</p>
+                <ul>
+                    <li>Pastikan Anda memiliki izin sebelum melakukan scan terhadap website.</li>
+                    <li>Jangan gunakan WPScan untuk aktivitas ilegal.</li>
+                    <li>Gunakan WPScan hanya untuk tujuan pengujian keamanan dan pendidikan.</li>
+                </ul>
+                <p>Penyalahgunaan WPScan dapat melanggar hukum dan menyebabkan kerugian bagi orang lain!</p>
+            </div>
+        </section>
+    </div>
+    <script src="https://codeforkerapp.github.io/JS/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Panduan Social Engineer Toolkit (SET) - CodeForker</title>
+  <link rel="stylesheet" href="https://codeforkerapp.github.io/css/style.css">
+</head>
+
+<body data-theme="light">
+  <header class="header" data-theme="light">
+    <div class="menu-toggle" onclick="goBack()">
+      <i class="fas fa-arrow-left"></i>
+    </div>
+    <p2>Social Engineer Toolkit</p2>
+  </header>
+  <div class="tutorial-container">
+    <section class="tutorial-section">
+      <div class="thumbnail">
+        <img src="img/set.png" alt="Thumbnail" width="320" height="180">
+      </div>
+      <h2>📘 Apa itu Social Engineer Toolkit (SET)?</h2>
+      <p>Social Engineer Toolkit (SET) adalah framework open-source yang dirancang untuk social engineering. SET menyediakan
+        berbagai modul untuk melakukan berbagai serangan social engineering, seperti phishing, spear-phishing, dan
+        serangan berbasis web. SET memungkinkan Anda untuk membuat email phishing yang meyakinkan, halaman web palsu,
+        dan payload berbahaya untuk mencuri informasi sensitif.</p>
+    </section>
+    <section class="tutorial-section">
+      <h2>🛠️ Instalasi</h2>
+      <h3>Termux</h3>
+      <div class="warning-box">
+        <p><strong>Informasi:</strong> SET tidak tersedia di repositori paket Termux. 
+          Kamu bisa mencoba menginstall SET secara manual dengan mengikuti panduan di <a
+            href="https://github.com/trustedsec/social-engineer-toolkit">GitHub SET</a>. Namun, karena SET memiliki banyak dependensi, instalasi di Termux mungkin akan rumit dan membutuhkan konfigurasi tambahan.
+        </p>
+      </div>
+
+      <h3>Linux (Ubuntu/Debian)</h3>
+      <div class="code-snippet">
+        <button class="copy-btn" onclick="copyCode(this)">
+          <i class="fas fa-copy"></i>
+        </button>
+        <pre><code>sudo apt update
+sudo apt install set -y</code></pre>
+      </div>
+    </section>
+    <section class="tutorial-section">
+      <h2>🔍 Penggunaan Dasar (Linux)</h2>
+      <h3>Memulai SET</h3>
+      <div class="code-snippet">
+        <button class="copy-btn" onclick="copyCode(this)">
+          <i class="fas fa-copy"></i>
+        </button>
+        <pre><code>setoolkit</code></pre>
+      </div>
+      <h3>Membuat Serangan Phishing</h3>
+      <ol>
+        <li>Pilih opsi 1 (Social-Engineering Attacks).</li>
+        <li>Pilih opsi 2 (Website Attack Vectors).</li>
+        <li>Pilih opsi 3 (Credential Harvester Attack Method).</li>
+        <li>Pilih opsi 2 (Site Cloner).</li>
+        <li>Masukkan URL website yang ingin di-clone.</li>
+        <li>SET akan membuat salinan website tersebut dan menyimpannya di direktori Anda.</li>
+        <li>Kirimkan link website palsu tersebut ke target Anda.</li>
+      </ol>
+    </section>
+    <section class="tutorial-section">
+      <h2>⚠️ Peringatan Penting</h2>
+      <div class="warning-box">
+        <p><strong>Perhatian!</strong> SET adalah alat yang powerful. Gunakan dengan bijak dan bertanggung jawab.</p>
+        <ul>
+          <li>Pastikan Anda memiliki izin sebelum melakukan serangan social engineering.</li>
+          <li>Jangan gunakan SET untuk aktivitas ilegal.</li>
+          <li>Gunakan SET hanya untuk tujuan pengujian keamanan dan pendidikan.</li>
+        </ul>
+        <p>Penyalahgunaan SET dapat melanggar hukum dan menyebabkan kerugian bagi orang lain!</p>
+      </div>
+    </section>
+  </div>
+  <script src="https://codeforkerapp.github.io/JS/main.js"></script>
+</body>
+
+</html>

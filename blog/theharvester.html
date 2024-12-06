@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Panduan TheHarvester - CodeForker</title>
+    <link rel="stylesheet" href="https://codeforkerapp.github.io/css/style.css">
+</head>
+<body data-theme="light">
+    <header class="header" data-theme="light">
+        <div class="menu-toggle" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+        <p2>TheHarvester</p2>
+    </header>
+    <div class="tutorial-container">
+        <section class="tutorial-section">
+        	<div class="thumbnail">
+    <img src="img/theharvester.png" alt="Thumbnail" width="320" height="180">
+</div>
+            <h2>📘 Apa itu TheHarvester?</h2>
+            <p>TheHarvester adalah tool <i>Open Source Intelligence (OSINT)</i> yang digunakan untuk mengumpulkan informasi publik tentang target dari berbagai sumber, seperti <i>search engine</i>, <i>key server</i>, dan <i>social media</i>. TheHarvester dapat membantu dalam penetration testing dengan mengidentifikasi email, subdomain, <i>virtual host</i>, dan informasi lainnya yang terkait dengan target.</p>
+        </section>
+        <section class="tutorial-section">
+            <h2>🛠️ Instalasi</h2>
+            <h3>Termux</h3>
+<div class="code-snippet">
+    <button class="copy-btn" onclick="copyCode(this)">
+        <i class="fas fa-copy"></i>
+    </button>
+    <pre><code>pkg update && pkg upgrade -y
+pkg install python3 git -y
+pip3 install theharvester</code></pre>
+</div>
+
+
+            <h3>Linux (Ubuntu/Debian)</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>sudo apt update
+sudo apt install theharvester -y</code></pre>
+            </div>
+        </section>
+        <section class="tutorial-section">
+            <h2>🔍 Penggunaan Dasar</h2>
+            <h3>Menjalankan TheHarvester</h3>
+            <div class="code-snippet">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>theharvester -d domain.com -l 500 -b google</code></pre>
+            </div>
+            <p>Keterangan:</p>
+            <ul>
+                <li><code>-d</code>: Nama domain target.</li>
+                <li><code>-l</code>: Batas jumlah hasil.</li>
+                <li><code>-b</code>: <i>Source</i> data (misalnya, google, bing, linkedin).</li>
+            </ul>
+        </section>
+        <section class="tutorial-section">
+            <h2>⚠️ Peringatan Penting</h2>
+            <div class="warning-box">
+                <p><strong>Perhatian!</strong> TheHarvester adalah alat yang powerful. Gunakan dengan bijak dan bertanggung jawab.</p>
+                <ul>
+                    <li>Pastikan Anda mematuhi hukum dan etika saat menggunakan TheHarvester.</li>
+                    <li>Jangan gunakan TheHarvester untuk mengumpulkan informasi secara ilegal atau merugikan orang lain.</li>
+                    <li>Gunakan TheHarvester hanya untuk tujuan pengujian keamanan dan penelitian yang sah.</li>
+                </ul>
+                <p>Penyalahgunaan TheHarvester dapat melanggar hukum dan menyebabkan kerugian bagi orang lain!</p>
+            </div>
+        </section>
+    </div>
+    <script src="https://codeforkerapp.github.io/JS/main.js"></script>
+</body>
+</html>
