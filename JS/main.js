@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 function goBack() {
-    window.location.href = "index.html";
+    window.location.href = "https://codeforkerapp.github.io/";
 }
 
         function copyCode(button) {
